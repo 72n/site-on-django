@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Последние публикации{% endblock%}
+
+{% block content %}
+
+    {% if latest_showcodes_list %}
+    <h3>Последние статьи новостей:</h3>
+
+        {% for a in latest_showcodes_list %}
+            <div class="info_block" id="spisok_stastey">
+                <a href="{% url 'MyMapView:detail' a.id %}"><h3>{{a.MyMapView_title}}</h3></a>
+                <em class="pubdata">{{a.Pub_date}}</em><br>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        Статьи не найдены(
+    {% endif %}
+
+{% endblock %}

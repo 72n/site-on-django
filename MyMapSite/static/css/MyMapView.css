@@ -1,0 +1,32 @@
+header {
+            background: #7FBD4D;
+            padding: 15px;
+            text-align: center;
+}
+
+#footer {
+            background: #c7b39b;
+            position: fixed;
+            fit-bottom: 0%;
+            height: 5%;
+            width: 100%;
+}
+
+#made {
+            float: right;
+            display: block;
+            height: 20px;
+            width: 175px;
+            text-align: right;
+}
+
+#donate {
+            height: 40px;
+            width: 325px;
+            position: fixed;
+}
+
+.pubdata {
+            display: block;
+            text-align: right;
+}

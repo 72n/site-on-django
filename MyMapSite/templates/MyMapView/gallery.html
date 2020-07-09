@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Галерея{% endblock%}
+
+{% block content %}
+
+    {% if img_list %}
+
+
+        <div id="skrini" class="statya">
+            <div class="text_statyi">
+                <h3>Скриншоты прямиком из мира и не только:</h3>
+                {% for a in img_list %}
+                    <div class="plitka">
+                        <img src="{{a.img}}" width="240px" height="135px"/>
+                        <a href="{% url 'MyMapView:detail_img' a.id %}">{{a.where}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    {% else %}
+        Картинки потерялись(
+    {% endif %}
+    <br>
+    <br>
+{% endblock %}

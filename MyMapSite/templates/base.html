@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}MyMineMap{% endblock%}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/MyMapView.css' %}">
+</head>
+<body>
+
+    <header>
+        <div id="shapka">
+            <div id="nav1">
+                <a class='navbutton' href="{% url 'MyMapView:maine' %}">Главная</a>
+                <a class='navbutton' href="{% url 'MyMapView:index' %}">Новости</a>
+            </div>
+            <div id="name">
+                <h1>Дивный новый мир</h1>
+            </div>
+            <div id="nav2">
+                <a class='navbutton' href="{% url 'MyMapView:gallery' %}">Галерея</a>
+                <a class='navbutton' href="{% url 'MyMapView:contacts' %}" id='cont'>Контакты</a>
+            </div>
+        </div>
+    </header>
+
+
+    {% block content %}
+
+            <div class="statya">
+                <div class="text_statyi">
+                    <h2>{{showcode.MyMapView_title}}</h2>
+                    {{showcode.MyMapView_text|safe}}
+                    <a class='navbutton' href="{% url 'MyMapView:detail' 1 %}" id='k_statye'>К статье</a>
+                </div>
+            </div>
+            <hr>
+
+
+        <div class="comm">
+            <h4>Отзывы:</h4>
+            {% if latest_comments_list %}
+
+            {% for c in latest_comments_list %}
+                <p class="comm">
+                    {% if c.was_published_recently %}
+                        новый комментарий!<br>
+                    {%endif%}
+                    <div id="left_float" class="info_block">
+                        <strong>{{c.author_name}}</strong>, <em>{{c.pub_date}}</em>
+                        <p>{{c.comment_text}}</p>
+                    </div>
+                </p>
+                <br>
+            {% endfor %}
+            {%else%}
+                Комментариев нет
+            {%endif%}
+        </div>
+
+
+        <hr>
+
+    {% endblock %}
+
+    <div id="download">
+        <div id="download_inner">
+            <a href="https://drive.google.com/file/d/1_UKFd_wDS04f42xVLzMugGgMwcQQeJ0Q/view?usp=sharing"><img src="{% static 'img/mcicon.png' %}" height="18px">моя актуальная сборка minecraft</a><br>
+            <a href="https://drive.google.com/file/d/1yUzG5MmTT6nCDSt6d49hzid7dF2t4M3U/view?usp=sharing"><img src="{% static 'img/hammer.png' %}" height="18px">актуальная версия мира</a><br>
+        </div>
+    </div>
+
+
+    <div id="footer">
+        <div id="donate">
+            <strong>Поддержите автора: <a href="https://vk.me/moneysend/sem2n"><img src="{% static 'img/vkpay_logo.png' %}" height="18px"></a><br>
+        или на карту сбербанка: 4276 3801 8804 1219 <img src="{% static 'img/sber_logo.png' %}" height="18px"></strong>
+        </div>
+        <div id="made">
+            <strong>© Сделано в России, 2020</strong>
+        </div>
+    </div>
+
+</body>
+</html>

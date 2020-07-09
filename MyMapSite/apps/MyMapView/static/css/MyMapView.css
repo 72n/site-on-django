@@ -1,0 +1,188 @@
+body {
+            background: url('../img/backgr.jpg') #446401 no-repeat;
+            background-attachment: fixed;
+            background-size: 100%
+}
+
+header {
+            background-image: url('../img/quartz_block_chiseled_top.png');
+            height: 96px;
+}
+
+a {
+            color: #0099FF;
+}
+
+a:hover {
+            color: #003366;
+}
+
+#nav1 {
+            display: inline-block;
+}
+
+#nav2 {
+            display: inline-block;
+}
+
+#shapka {
+            text-align: center;
+            height: 96px;
+}
+
+#name {
+            display: inline-block;
+            width: 400px;
+            padding-top: 5px;
+            color: #111111;
+}
+
+#footer {
+            background-image: url('../img/stone.png');
+            width: 100%;
+            height: 50px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: fixed;
+            z-index: 4;
+}
+
+#made {
+            margin-right: 1%;
+            margin-top: 10px;
+            float: right;
+            display: block;
+            height: 20px;
+            width: 200px;
+            text-align: right;
+}
+
+#donate {
+            height: 40px;
+            width: 350px;
+            position: fixed;
+}
+
+#cont {
+            background-size: 103px 57px;
+}
+
+#cont_info {
+            height: 250px;
+            width: 750px;
+            margin: 20px;
+}
+
+#spisok_stastey {
+            height: 120px;
+            width: 750px;
+            margin: 20px;
+}
+
+#left_float {
+            margin: 20px;
+}
+
+#k_statye {
+            float: right;
+            background-size: 96px 60px;
+}
+
+#skrini {
+            width: 70%;
+            text-align: center;
+            padding-top: 55px;
+            padding-bottom: 50px;
+            padding-left: 0%;
+            padding-right: 0%;
+}
+
+#about_screen {
+            font-size: 16px;
+}
+
+.comm {
+            color: #DDDDDD;
+            margin: 20px;
+            width: 70%;
+}
+
+.pubdata {
+            display: block;
+            text-align: right;
+}
+
+.navbutton {
+            padding: 20px;
+            margin: 2px;
+            background-image: url('../img/widgets.png');
+            background-size: 94px 56px;
+            color: #DDDDDD;
+            box-shadow: 7px 7px 7px rgba(0,0,0,0.5);
+            border-radius: 3px;
+}
+
+.statya {
+            background: url('../img/map_background.png') center no-repeat;
+            background-size: 100% 100%;
+            padding-left: 9%;
+            padding-right: 5%;
+            padding-top: 50px;
+            padding-bottom: 120px;
+            margin: 25px auto;
+            color: #111111;
+            width: 75%;
+}
+
+.text_statyi {
+}
+
+.info_block {
+            margin: 25px auto;
+            background: rgba(0, 0, 0, 0.6) center no-repeat;
+            color: #DDDDDD;
+            width: 75%;
+            padding: 20px;
+            border-radius: 7px;
+}
+
+.plitka {
+            position: relative;
+            display: inline-block;
+            margin: 25px 10px;
+            background: rgba(0, 0, 0, 0.6) center no-repeat;
+            color: #DDDDDD;
+            width: 250px;
+            height: 160px;
+            padding: 5px;
+            border-radius: 7px;
+}
+
+#download {
+            color: #DDDDDD;
+            position: fixed;
+            top: 11%;
+            left: 0;
+            transition-duration: 0.3s;
+}
+
+#download_inner {
+            background: url('../img/toasts1.png');
+            background-size: 320px 64px;
+            position: fixed;
+            width: 320px;
+            height: 64px;
+            padding: 11px;
+            top: 11%;
+            left: -270px;
+            transition-duration: 0.3s;
+}
+
+#download:hover {
+            left: 270px;
+}
+
+#download:hover #download_inner {
+            left: 0;
+}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}{{showcode.MyMapView_title}}{% endblock%}
+
+{% block content %}
+
+
+<div class="info_block">
+    <div class="text_statyi">
+        <h2>{{showcode.MyMapView_title}}</h2>
+        {{showcode.MyMapView_text|safe}}
+        <em class="pubdata">{{showcode.Pub_date}}</em>
+    </div>
+</div>
+
+<hr>
+
+<div class="comm">
+    <h4>Комментарии:</h4>
+
+    {% if latest_comments_list %}
+
+        {% for c in latest_comments_list %}
+            <p>
+                {% if c.was_published_recently %}
+                    новый комментарий!<br>
+                {%endif%}
+                <div id="left_float" class="info_block" >
+                    <strong>{{c.author_name}}</strong>, <em>{{c.pub_date}}</em>
+                    <p>{{c.comment_text}}</p>
+                </div>
+            </p>
+        {% endfor %}
+    {%else%}
+        <div id="left_float" class="info_block" >
+            Комментариев нет
+        </div>
+    {%endif%}
+</div>
+
+    <hr>
+<div class="comm">
+    <h4>Поделитесь свои мнением:</h4>
+
+    <form action="{% url 'MyMapView:leave_comment' showcode.id %}" method="POST">
+
+        {% csrf_token %}
+
+        <input type="text" required placeholder="Ваше имя" name="name"><br>
+        <textarea name="text" required="" placeholder="Текст комментария" cols="120" rows="4"></textarea><br>
+
+        <button type="submit">Оставить комментарий</button>
+</div>
+<br>
+<br>
+<hr>
+{% endblock %}
